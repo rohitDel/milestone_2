@@ -12,7 +12,7 @@ import java.io.IOException;
 @WebFilter("*")
 public class NetflixFilter implements Filter {
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) throws ServletException { //filter to implement execution time functionality
         Filter.super.init(filterConfig);
     }
 

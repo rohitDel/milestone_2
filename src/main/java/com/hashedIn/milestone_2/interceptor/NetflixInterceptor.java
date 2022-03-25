@@ -12,15 +12,15 @@ import java.time.Duration;
 import java.time.LocalTime;
 
 @Component
-public class NetflixInterceptor extends HandlerInterceptorAdapter {
+public class NetflixInterceptor extends HandlerInterceptorAdapter { //interceptor for AuthToken
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
         System.out.println("*****Inside PreHandle Interceptor********");
-        String token = request.getHeader("X-Auth-Token");
+        String token = request.getHeader("X-Auth-Token"); //getting header
         long startTime = System.currentTimeMillis();
         request.setAttribute("startTime", startTime);
-        if(token==null || token.isEmpty()) {
+        if(token==null || token.isEmpty()) { //checking token values
             response.setContentType("application/json");
             response.setStatus(401);
             return false;

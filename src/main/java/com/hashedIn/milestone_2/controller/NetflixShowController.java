@@ -18,17 +18,17 @@ public class NetflixShowController {
     @Autowired
     NetflixShowService netflixShowService;
 
-    @GetMapping(params = "count")
+    @GetMapping(params = "count") //controller to get data by count
     public ResponseEntity<List<NetflixMap>> getTvShowsByType(@RequestParam Integer count) throws FileNotFoundException {
         return new ResponseEntity<>(netflixShowService.parseCsv(count), HttpStatus.OK);
     }
 
-    @GetMapping(params = "country")
+    @GetMapping(params = "country") //controller to get data by country
     public ResponseEntity<List<NetflixMap>> getTvShowByCountry(@RequestParam String country) throws FileNotFoundException {
         return new ResponseEntity<>(netflixShowService.getShowsByCountry(country), HttpStatus.OK);
     }
 
-    @GetMapping(params = "movieType")
+    @GetMapping(params = "movieType") //controller to get data by movietype
     public ResponseEntity<List<NetflixMap>> getTvShowByMovieType(@RequestParam String movieType) throws FileNotFoundException {
         return new ResponseEntity<>(netflixShowService.getShowsByMovieType(movieType), HttpStatus.OK);
     }

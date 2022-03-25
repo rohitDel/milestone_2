@@ -14,9 +14,9 @@ public class NetflixShowService {
 
     public int count = 0;
 
-    public List<NetflixMap> parseCsv(Integer n) throws FileNotFoundException {
+    public List<NetflixMap> parseCsv(Integer n) throws FileNotFoundException { //parsing data and displaying
         List<NetflixMap> result = new ArrayList<>();
-        Scanner sc = new Scanner(new File("src/main/resources/netflix_titles.csv"));
+        Scanner sc = new Scanner(new File("src/main/resources/netflix_titles.csv")); //parsing data from csv file
         while (sc.hasNext() && count != n)  //returns a boolean value
         {
             String data = sc.nextLine();
@@ -30,7 +30,7 @@ public class NetflixShowService {
         return result;
     }
 
-    public List<NetflixMap> getShowsByCountry(String country) throws FileNotFoundException {
+    public List<NetflixMap> getShowsByCountry(String country) throws FileNotFoundException { //filter by country
         List<NetflixMap> result = new ArrayList<>();
         Scanner sc = new Scanner(new File("src/main/resources/netflix_titles.csv"));
         while (sc.hasNext())  //returns a boolean value
@@ -46,7 +46,7 @@ public class NetflixShowService {
                 .collect(Collectors.toList());
     }
 
-    public List<NetflixMap> getShowsByMovieType(String movieType) throws FileNotFoundException {
+    public List<NetflixMap> getShowsByMovieType(String movieType) throws FileNotFoundException { //filter by movieType
         List<NetflixMap> result = new ArrayList<>();
         Scanner sc = new Scanner(new File("src/main/resources/netflix_titles.csv"));
         while (sc.hasNext())  //returns a boolean value

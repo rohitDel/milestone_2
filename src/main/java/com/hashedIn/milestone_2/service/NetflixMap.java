@@ -1,6 +1,6 @@
 package com.hashedIn.milestone_2.service;
 
-public class NetflixMap {
+public class NetflixMap { //pojo class  for data mapping
     private String sNo;
     private String type;
     private String name;
